@@ -1,2 +1,2 @@
 # python
-python  learn
+python  learn from 0 to 1
