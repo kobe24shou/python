@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# -*- codeing: utf-8 -*-
-# Author:ls 
+#-*-coding:utf-8 -*-
+# Author:ls
 # aishou24@gmail.com
 # date:2018/4/27
 
