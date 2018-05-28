@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- codeing: utf-8 -*-
+# -*-coding:utf-8-*-
 # Author:ls 
 # aishou24@gmail.com
 # 输入3个数字，返回最大数字
