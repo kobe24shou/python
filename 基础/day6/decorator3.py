@@ -22,4 +22,4 @@ def add(a, b):
     time.sleep(1)
     print(a + b)
 
-add(2, 4)
+add(2,4)

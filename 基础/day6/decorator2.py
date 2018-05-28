@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
-#ÁíÍâÒ»ÖÖĞ´·¨
+# å¦å¤–ä¸€ç§å†™æ³•
 import time
 
-def show_time(f):  #show_time º¯ÊıÊÇ×°ÊÎÆ÷º¯Êı
+def show_time(f):  #show_time å‡½æ•°æ˜¯è£…é¥°å™¨å‡½æ•°
 
     def inner():
         start = time.time()
@@ -13,8 +13,8 @@ def show_time(f):  #show_time º¯ÊıÊÇ×°ÊÎÆ÷º¯Êı
 
     return  inner
 
-@show_time # µÈ¼ÛÓÚ foo = show_time(foo)
-def foo(): #Ô­À´µÄº¯Êı
+@show_time # ç­‰ä»·äº foo = show_time(foo)
+def foo(): #åŸæ¥çš„å‡½æ•°
     print('foo......')
     time.sleep(2)
 

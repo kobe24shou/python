@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
-import  time
+import time
 
-def foo(): #Ô­À´µÄº¯Êı
+def foo():# åŸæ¥çš„å‡½æ•°
     print('foo......')
     time.sleep(2)
 
-def show_time(f):  # show_time º¯ÊıÊÇ×°ÊÎÆ÷º¯Êı
+def show_time(f):  # show_time å‡½æ•°æ˜¯è£…é¥°å™¨å‡½æ•°
 
     def inner():
         start = time.time()
@@ -14,9 +14,9 @@ def show_time(f):  # show_time º¯ÊıÊÇ×°ÊÎÆ÷º¯Êı
         end = time.time()
         print("spend %s" % (end - start))
 
-    return  inner
+    return inner
 
-foo=show_time(foo)
-foo() #Ö´ĞĞinner º¯Êı
+foo = show_time(foo)
+foo() # æ‰§è¡Œinner å‡½æ•°
 
 
