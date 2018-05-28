@@ -10,13 +10,13 @@ def foo():
     print('speed %s' %(end-start))
 foo()
 
-def show_time():  #第一种写法
+def show_time():  # 
     start = time.time()
     foo()
     end = time.time()
     print('speed %s' % (end - start))
 
-def show_time2(f):  #第一种写法
+def show_time2(f):  # 
     start = time.time()
     f()
     end = time.time()
