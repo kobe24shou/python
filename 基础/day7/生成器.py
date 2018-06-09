@@ -42,3 +42,29 @@ print(next(foo()))   # foo yield 不会打印
 print("---------------------------------")
 next(g)   # foo yield 不会打印
 next(g)   # foo yield 打印
+print("---------------------------------")
+# 0 1 1 2 3 5 8
+def fib(max):
+    n,before,after = 0,0,1
+    while n < max:
+        print(after)
+        before,after=after,before+after
+        n = n +1
+fib(10)
+
+print("---------------------------------")
+
+def fib1(max):  # fib1 变成了生成器对象
+    n,before,after = 0,0,1
+    while n < max:
+        yield before
+        before,after=after,before+after
+        n = n +1
+print(fib1(10))
+g = fib1(10)
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
