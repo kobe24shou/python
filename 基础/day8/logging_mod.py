@@ -6,7 +6,7 @@
 import logging
 
 
-#  配置日志级别，日志格式，输出位置
+#  basicConfig 配置日志级别，日志格式，输出位置
 logging.basicConfig(level=logging.DEBUG,  # 日志级别debug
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S',

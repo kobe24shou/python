@@ -3,9 +3,9 @@
 # Author:ls 
 # aishou24@gmail.com
 # date:2018/6/10
-#加密
+#加密模块
 import hashlib
-import sha
+import _sha1
 
 m = hashlib.md5() #
 print(m) #<md5 HASH object @ 0x00000231930DE440>
