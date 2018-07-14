@@ -127,8 +127,8 @@ def run():
     this function will be called right a way when the program started, here handles the user interaction stuff
     :return:
     '''
-    acc_data = auth.acc_login(user_data,access_logger)
+    acc_data = auth.acc_login(user_data,access_logger) # 程序第一件事情 用户验证
     if user_data['is_authenticated']:
         user_data['account_data'] = acc_data
-        interactive(user_data)
+        interactive(user_data)    # interactive 用户交互信息
 

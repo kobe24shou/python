@@ -74,6 +74,7 @@ def acc_login(user_data,log_obj):
     :return:
     '''
     retry_count = 0
+    log_obj.info("新添加")
     while user_data['is_authenticated'] is not True and retry_count < 3 :
         account = input("\033[32;1maccount:\033[0m").strip()
         password = input("\033[32;1mpassword:\033[0m").strip()
