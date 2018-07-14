@@ -77,10 +77,8 @@ def withdraw(acc_data):
             new_balance = transaction.make_transaction(trans_logger,account_data,'withdraw', withdraw_amount)
             if new_balance:
                 print('''\033[42;1mNew Balance:%s\033[0m''' %(new_balance['balance']))
-
         else:
             print('\033[31;1m[%s] is not a valid amount, only accept integer!\033[0m' % withdraw_amount)
-
         if withdraw_amount == 'b':
             back_flag = True
 

@@ -8,12 +8,11 @@ import json
 import time
 
 
-
 def login_required(func):
     "验证用户是否登录"
 
     def wrapper(*args,**kwargs):
-        #print('--wrapper--->',args,kwargs)
+        # print('--wrapper--->',args,kwargs)
         if args[0].get('is_authenticated'):
             return func(*args,**kwargs)
         else:
@@ -36,10 +35,10 @@ def acc_auth(account,password):
             account_data = json.load(f)
             if account_data['password'] == password:
                 exp_time_stamp = time.mktime(time.strptime(account_data['expire_date'], "%Y-%m-%d"))
-                if time.time() >exp_time_stamp:
+                if time.time() > exp_time_stamp:
                     print("\033[31;1mAccount [%s] has expired,please contact the back to get a new card!\033[0m" % account)
-                else: #passed the authentication
-                    return  account_data
+                else:  # passed the authentication
+                    return account_data
             else:
                 print("\033[31;1mAccount ID or password is incorrect!\033[0m")
     else:
