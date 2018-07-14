@@ -29,7 +29,7 @@ def acc_auth(account,password):
     :return: if passed the authentication , retun the account object, otherwise ,return None
     '''
     db_path = db_handler.db_handler(settings.DATABASE)
-    account_file = "%s/%s.json" %(db_path,account)
+    account_file = "%s/%s.json" % (db_path, account)
     print(account_file)
     if os.path.isfile(account_file):
         with open(account_file,'r') as f:
@@ -46,7 +46,7 @@ def acc_auth(account,password):
         print("\033[31;1mAccount [%s] does not exist!\033[0m" % account)
 
 
-def acc_auth2(account,password):
+def acc_auth2(account, password):
     '''
     优化版认证接口
     :param account: credit account number
@@ -57,7 +57,6 @@ def acc_auth2(account,password):
     db_api = db_handler.db_handler()
     data = db_api("select * from accounts where account=%s" % account)
 
-
     if data['password'] == password:
         exp_time_stamp = time.mktime(time.strptime(data['expire_date'], "%Y-%m-%d"))
         if time.time() > exp_time_stamp:
@@ -67,7 +66,8 @@ def acc_auth2(account,password):
     else:
         print("\033[31;1mAccount ID or password is incorrect!\033[0m")
 
-def acc_login(user_data,log_obj):
+
+def acc_login(user_data, log_obj):
     '''
     account login func
     :user_data: user info data , only saves in memory
@@ -75,16 +75,16 @@ def acc_login(user_data,log_obj):
     '''
     retry_count = 0
     log_obj.info("新添加")
-    while user_data['is_authenticated'] is not True and retry_count < 3 :
+    while user_data['is_authenticated'] is not True and retry_count < 3:  # 如果还没有登录，密码输入重试次数小于三次
         account = input("\033[32;1maccount:\033[0m").strip()
         password = input("\033[32;1mpassword:\033[0m").strip()
         auth = acc_auth2(account, password)
-        if auth: #not None means passed the authentication
+        if auth:  # not None means passed the authentication
             user_data['is_authenticated'] = True
             user_data['account_id'] = account
-            #print("welcome")
+            # print("welcome")
             return auth
-        retry_count +=1
+        retry_count += 1
     else:
         log_obj.error("account [%s] too many login attempts" % account)
         exit()

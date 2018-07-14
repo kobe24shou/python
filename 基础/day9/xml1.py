@@ -1,17 +1,18 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
 
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET   # 模块取个别名
 
 tree = ET.parse("xmltest.xml")
 root = tree.getroot()
-print(root.tag)
-
+print(root.tag)  # data
+print("--------------遍历xml文档----------------------")
 # 遍历xml文档
 for child in root:
     print(child.tag, child.attrib)
     for i in child:
         print(i.tag, i.text)
+print("----------------只遍历year 节点-------------------------")
 
 # 只遍历year 节点
 for node in root.iter('year'):

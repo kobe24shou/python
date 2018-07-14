@@ -1,5 +1,5 @@
 #!_*_coding:utf-8_*_
-#__author__:"Alex Li"
+# __author__:"Alex Li"
 
 '''
 main program handle module , handle all the user interaction stuff
@@ -14,13 +14,13 @@ from core import transaction
 from core.auth import login_required
 import time
 
-#transaction logger
+# transaction logger
 trans_logger = logger.logger('transaction')
-#access logger
+# access logger
 access_logger = logger.logger('access')
 
 
-#temp account data ,only saves the data in memory
+# temp account data ,only saves the data in memory
 user_data = {
     'account_id':None,
     'is_authenticated':False,
@@ -31,6 +31,7 @@ user_data = {
 def account_info(acc_data):
     print(user_data)
 
+
 @login_required
 def repay(acc_data):
     '''
@@ -38,9 +39,9 @@ def repay(acc_data):
     :return:
     '''
     account_data = accounts.load_current_balance(acc_data['account_id'])
-    #for k,v in account_data.items():
+    # for k,v in account_data.items():
     #    print(k,v )
-    current_balance= ''' --------- BALANCE INFO --------
+    current_balance = ''' --------- BALANCE INFO --------
         Credit :    %s
         Balance:    %s''' %(account_data['credit'],account_data['balance'])
     print(current_balance)
@@ -89,6 +90,8 @@ def pay_check(acc_data):
     pass
 def logout(acc_data):
     pass
+
+
 def interactive(acc_data):
     '''
     interact with user
@@ -117,17 +120,19 @@ def interactive(acc_data):
         user_option = input(">>:").strip()
         if user_option in menu_dic:
             print('accdata',acc_data)
-            #acc_data['is_authenticated'] = False
+            # acc_data['is_authenticated'] = False
             menu_dic[user_option](acc_data)
 
         else:
             print("\033[31;1mOption does not exist!\033[0m")
+
+
 def run():
     '''
     this function will be called right a way when the program started, here handles the user interaction stuff
     :return:
     '''
-    acc_data = auth.acc_login(user_data,access_logger) # 程序第一件事情 用户验证
+    acc_data = auth.acc_login(user_data, access_logger)  # 程序第一件事情 用户先验证
     if user_data['is_authenticated']:
         user_data['account_data'] = acc_data
         interactive(user_data)    # interactive 用户交互信息

@@ -1,20 +1,23 @@
 #!_*_coding:utf-8_*_
-#__author__:"Alex Li"
+# __author__:"Alex Li"
 
 '''
 handle all the database interactions
 '''
 import json,time ,os
 from conf import settings
+
+
 def file_db_handle(conn_params):
     '''
     parse the db file path
     :param conn_params: the db connection params set in settings
     :return:
     '''
-    print('file db:',conn_params)
-    #db_path ='%s/%s' %(conn_params['path'],conn_params['name'])
+    print('file db:', conn_params)
+    # db_path ='%s/%s' %(conn_params['path'],conn_params['name'])
     return file_execute
+
 
 def db_handler():
     '''
@@ -26,8 +29,7 @@ def db_handler():
     if conn_params['engine'] == 'file_storage':
         return file_db_handle(conn_params)
     elif conn_params['engine'] == 'mysql':
-        pass #todo
-
+        pass  # todo
 
 
 def file_execute(sql,**kwargs):
@@ -54,7 +56,7 @@ def file_execute(sql,**kwargs):
         column, val = sql_list[1].strip().split("=")
         if column == 'account':
             account_file = "%s/%s.json" % (db_path, val)
-            #print(account_file)
+            # print(account_file)
             if os.path.isfile(account_file):
                 account_data = kwargs.get("account_data")
                 with open(account_file, 'w') as f:

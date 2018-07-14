@@ -2,6 +2,7 @@
 # __author__:"Alex Li"
 import os
 import sys
+# bin目录是程序的入口
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(base_dir)
