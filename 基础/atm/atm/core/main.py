@@ -59,6 +59,8 @@ def repay(acc_data):
 
         if repay_amount == 'b':
             back_flag = True
+
+
 def withdraw(acc_data):
     '''
     print current balance and let user do the withdraw action
@@ -66,7 +68,7 @@ def withdraw(acc_data):
     :return:
     '''
     account_data = accounts.load_current_balance(acc_data['account_id'])
-    current_balance= ''' --------- BALANCE INFO --------
+    current_balance = ''' --------- BALANCE INFO --------
         Credit :    %s
         Balance:    %s''' %(account_data['credit'],account_data['balance'])
     print(current_balance)
@@ -82,10 +84,15 @@ def withdraw(acc_data):
         if withdraw_amount == 'b':
             back_flag = True
 
+
 def transfer(acc_data):
     pass
+
+
 def pay_check(acc_data):
     pass
+
+
 def logout(acc_data):
     pass
 
@@ -134,4 +141,3 @@ def run():
     if user_data['is_authenticated']:
         user_data['account_data'] = acc_data
         interactive(user_data)    # interactive 用户交互信息
-
