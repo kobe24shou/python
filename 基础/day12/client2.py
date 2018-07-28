@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
 # 一收一发持续连接
+
 import socket
 
 sk = socket.socket()
