@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+# -*-coding:utf-8-*-
+
+import tornado.ioloop
+import tornado.web
+class MainHandler(tornado.web.RequestHandler):
+    def get(self):
+        import time
+        self.write("hello word")
+        self.write(str(time.time()))
+
+application = tornado.web.Application([
+    (r"/index", MainHandler),
+])
+
+if __name__ == "__main__":
+    application.listen(8888)
+    tornado.ioloop.IOLoop.instance().start()
