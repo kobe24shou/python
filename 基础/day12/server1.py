@@ -16,3 +16,5 @@ conn, addr = sk.accept()
 inp = input(">>>>>")
 conn.send(bytes(inp, "utf8"))
 
+conn.close()
+
