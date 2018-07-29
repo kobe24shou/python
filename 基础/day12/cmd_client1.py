@@ -20,11 +20,12 @@ while True:
 
     result_len = int(str(sk.recv(1024), "utf8"))
     print("接受长度：" + str(result_len))
+    #sk.send(bytes("ok"), "utf-8")
 
     data = bytes()
     while len(data) != result_len:
-        recv = sk.recv(1024)
-        data += recv
+        t_recv = sk.recv(1024)
+        data += t_recv
 
     print(str(data, "gbk"))
 

@@ -15,7 +15,7 @@ print("waiting...........")
 
 while True:
     conn, addr = sk.accept()
-
+    print(addr)
     while True:
         try:   # 防止客户端强制退出，导致服务端挂掉
             data = conn.recv(1024)
@@ -29,9 +29,12 @@ while True:
 
         obj = subprocess.Popen(str(data, "utf8"), shell=True, stdout=subprocess.PIPE)
         cmd_result = obj.stdout.read()
-        result_len = bytes(str(len(cmd_result)), "utf8")  # int 和bytes 不能直接转，需要str 中间过度
 
-        conn.sendall(result_len)
+        result_len = bytes(str(len(cmd_result)), "utf8")  # int 和bytes 不能直接转，需要str 中间过度
+        print(">>>接收到内容长度>>>",result_len)
+
+        conn.sendall(result_len)  # 粘包现象
+        #conn.recv(1024)  # 加这一行，一收一发解决粘包现象
         conn.sendall(cmd_result)
 
 sk.close()
