@@ -26,7 +26,7 @@ class MyServer(socketserver.BaseRequestHandler):
 
 
 if __name__ == '__main__':
-    server = socketserver.ThreadingTCPServer(('127.0.0.1',8098),MyServer)
+    server = socketserver.ThreadingTCPServer(('127.0.0.1',8098),MyServer) # 创建socket 链接
     server.serve_forever()
 
 
