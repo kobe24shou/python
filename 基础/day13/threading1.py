@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
 # date:2018/7/30
-
 import time
 import threading
 
@@ -18,9 +17,6 @@ def bar(n):
 # foo(3)
 # bar(3)
 
-end = time.time()
-print(begin-end)
-
 t1 = threading.Thread(target=foo,args=(1,)) # 创建线程对象
 t2 = threading.Thread(target=bar,args=(2,))
 
@@ -29,5 +25,9 @@ t2.start()
 
 print("....in the main....")
 
+t1.join()
+t2.join()
 
+end = time.time()
+print(begin-end)
 
