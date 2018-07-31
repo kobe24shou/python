@@ -7,12 +7,14 @@ from time import ctime,sleep
 import time
 
 def music(func):
+    print(threading.current_thread())
     for i in range(2):
         print ("Begin listening to %s. %s" %(func,ctime()))
         sleep(4)
         print("end listening %s"%ctime())
 
 def move(func):
+    print(threading.current_thread())
     for i in range(2):
         print ("Begin watching at the %s! %s" %(func,ctime()))
         sleep(5)
@@ -31,6 +33,8 @@ if __name__ == '__main__':
         t.start()
         # t.join()  # join 会阻塞住
     #t1.join()
-    # t2.join() #  for 循环之后开始执行 join
+    t2.join() #  for 循环之后开始执行 join
     # #######三种join位置结果不一样
-    print ("all over %s" %ctime()) 
+    print(threading.current_thread()) # 打印当前线程情况，是主线程还是子线程
+    print(threading.active_count()) # 打印当前线程数量
+    print ("all over %s" %ctime()) #主线程
