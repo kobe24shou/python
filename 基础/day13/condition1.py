@@ -24,11 +24,12 @@ class Consumer(threading.Thread):
         while True:
                 lock_con.acquire()
                 if len(L)==0:
-                    lock_con.wait()
+                    lock_con.wait() #释放锁
+                    print("-------------------------")
                 print('消费者',self.name,":Delete"+str(L[0]),L)
                 del L[0]
                 lock_con.release()
-                time.sleep(0.25)
+                time.sleep(1)
 
 
 if __name__=="__main__":
