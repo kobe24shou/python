@@ -19,8 +19,10 @@ if __name__ == '__main__':
         p = Process(target=f, args=(q, i))
         p_list.append(p)
         p.start()
+
     print(q.get())
     print(q.get())
     print(q.get())
+
     for i in p_list:
             i.join()

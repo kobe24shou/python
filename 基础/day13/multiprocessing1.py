@@ -12,7 +12,7 @@ def f(name):
 
 if __name__ == '__main__':
     p_list = []
-    for i in range(20):
+    for i in range(5):
         p = Process(target=f, args=('alvin',))   # 调用方式
         p_list.append(p)
         p.start()
