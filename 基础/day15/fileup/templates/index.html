@@ -9,7 +9,8 @@
 <h1>hello xxx </h1>
 <h1>hello xxx </h1>
 
-<form action="/xiaohu/" method="get">
+<form action="/xiaohu/" method="post" enctype="multipart/form-data">
+
     <p>用户名:<input type="text" name="username" value=""></p>
     <p>密  码:<input type="password" name="pwd" ></p>
     <p>性别 男:<input type="radio" name="sex"  value="0"></p>
@@ -19,7 +20,35 @@
 
     <p>     足球  <input type="checkbox" name="hobby" value="football"></p>
 
+
+    <P><input type="file" name="file_name"></P>
+
+
+
+    选择：<select name="city" multiple="multiple" size="5">
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+        <option value="d">c</option>
+        <option value="c">c</option>
+        <option value="d">c</option>
+        <option value="c">c</option>
+        <option value="d">c</option>
+    </select>
+
+       选择：<select name="city1">
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+        <option value="d">c</option>
+    </select>
+
+    <textarea rows="10" cols="100"> 自我评价  </textarea>
+
     <p><input type="submit" value="发送"></p>
+
+
+
 </form>
 </body>
 </html>
