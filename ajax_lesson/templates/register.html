@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>注册</h1>
+
+<form action="" method="post">
+<p>用户名：<input type="text" name="username" onblur="send(this)"/>
+    <span id="error"></span></p>
+<p>密　码：<input type="password" name="pwd"/></p>
+<input type="submit" value="注册"/>
+
+</form>
+
+<script type="text/javascript">
+        function createXMLHttpRequest() {
+            try {
+                return new XMLHttpRequest();
+            } catch (e) {
+                try {
+                    return new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    return new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+        }
+
+        function send(self){
+
+            var username = self.getAttribute("value");  // 拿到username 的名称
+
+            var xmlHttp = createXMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    alert(s);
+                    if(xmlHttp.responseText == "true") {
+                        document.getElementById("error").innerHTML="用户名已经注册了"
+                    }
+                }
+            };
+            xmlHttp.open("POST", "/ajax_register/", true);
+            xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlHttp.send("username=" + username); //固定格式发给后端
+        }
+</script>
+
+</body>
+</html>

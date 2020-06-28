@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ajax_lesson/.idea/ajax_lesson.iml" filepath="$PROJECT_DIR$/ajax_lesson/.idea/ajax_lesson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cx_oracle/.idea/cx_oracle.iml" filepath="$PROJECT_DIR$/cx_oracle/.idea/cx_oracle.iml" />
       <module fileurl="file://$PROJECT_DIR$/基础/day15/fileup/.idea/fileup.iml" filepath="$PROJECT_DIR$/基础/day15/fileup/.idea/fileup.iml" />
       <module fileurl="file://E:\git\python\.idea\python.iml" filepath="E:\git\python\.idea\python.iml" />
+      <module fileurl="file://F:/python/day58-python 全栈开发-web框架篇-笔记代码/user_manager/.idea/user_manager.iml" filepath="F:/python/day58-python 全栈开发-web框架篇-笔记代码/user_manager/.idea/user_manager.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/zabbix配置/zabbix-weixin-picture-master/.idea/weixin.iml" filepath="$USER_HOME$/Desktop/zabbix配置/zabbix-weixin-picture-master/.idea/weixin.iml" />
       <module fileurl="file://$PROJECT_DIR$/基础/.idea/基础.iml" filepath="$PROJECT_DIR$/基础/.idea/基础.iml" />
     </modules>
